@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sci-Fi Movie Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin: 0;
+        }
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sci-Fi Movie Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <h3>1. A cyborg assassin is sent from the future to kill Sarah Connor, whose unborn son will lead humanity in a war against machines.</h3>
+            <input type="radio" name="q1" value="RoboCop"> RoboCop<br>
+            <input type="radio" name="q1" value="The Terminator"> The Terminator<br>
+            <input type="radio" name="q1" value="Predator"> Predator<br>
+            <input type="radio" name="q1" value="Total Recall"> Total Recall<br>
+        </div>
+        <div class="question">
+            <h3>2. Ellen Ripley returns to the alien-infested planet with a team of marines to rescue colonists and confront the deadly xenomorphs.</h3>
+            <input type="radio" name="q2" value="Alien"> Alien<br>
+            <input type="radio" name="q2" value="The Abyss"> The Abyss<br>
+            <input type="radio" name="q2" value="Aliens"> Aliens<br>
+            <input type="radio" name="q2" value="Leviathan"> Leviathan<br>
+        </div>
+        <div class="question">
+            <h3>3. An elite military team is hunted by an invisible alien predator in the Central American jungle.</h3>
+            <input type="radio" name="q3" value="Predator"> Predator<br>
+            <input type="radio" name="q3" value="DeepStar Six"> DeepStar Six<br>
+            <input type="radio" name="q3" value="Zone Troopers"> Zone Troopers<br>
+            <input type="radio" name="q3" value="The Terminator"> The Terminator<br>
+        </div>
+        <div class="question">
+            <h3>4. A construction worker discovers his memories may be fake and travels to Mars to uncover his true identity.</h3>
+            <input type="radio" name="q4" value="Total Recall"> Total Recall<br>
+            <input type="radio" name="q4" value="RoboCop"> RoboCop<br>
+            <input type="radio" name="q4" value="The Abyss"> The Abyss<br>
+            <input type="radio" name="q4" value="Beyond the Rising Moon"> Beyond the Rising Moon<br>
+        </div>
+        <div class="question">
+            <h3>5. A murdered police officer is resurrected as a powerful cyborg law enforcer in a crime-ridden Detroit.</h3>
+            <input type="radio" name="q5" value="RoboCop"> RoboCop<br>
+            <input type="radio" name="q5" value="The Terminator"> The Terminator<br>
+            <input type="radio" name="q5" value="Leviathan"> Leviathan<br>
+            <input type="radio" name="q5" value="Star Crystal"> Star Crystal<br>
+        </div>
+        <div class="question">
+            <h3>6. A civilian diving team encounters an alien species deep in the ocean while trying to recover a sunken submarine.</h3>
+            <input type="radio" name="q6" value="The Abyss"> The Abyss<br>
+            <input type="radio" name="q6" value="DeepStar Six"> DeepStar Six<br>
+            <input type="radio" name="q6" value="Lords of the Deep"> Lords of the Deep<br>
+            <input type="radio" name="q6" value="The Rift"> The Rift<br>
+        </div>
+        <div class="question">
+            <h3>7. Deep-sea miners discover a sunken Soviet ship and unleash a deadly genetic mutation.</h3>
+            <input type="radio" name="q7" value="Leviathan"> Leviathan<br>
+            <input type="radio" name="q7" value="The Abyss"> The Abyss<br>
+            <input type="radio" name="q7" value="DeepStar Six"> DeepStar Six<br>
+            <input type="radio" name="q7" value="Survival Zone"> Survival Zone<br>
+        </div>
+        <div class="question">
+            <h3>8. A team of underwater researchers encounters a prehistoric sea monster while installing a nuclear missile base.</h3>
+            <input type="radio" name="q8" value="DeepStar Six"> DeepStar Six<br>
+            <input type="radio" name="q8" value="Leviathan"> Leviathan<br>
+            <input type="radio" name="q8" value="The Rift"> The Rift<br>
+            <input type="radio" name="q8" value="Lords of the Deep"> Lords of the Deep<br>
+        </div>
+        <div class="question">
+            <h3>9. In the year 2032, a group of astronauts discover an alien artifact that turns out to be a deadly creature.</h3>
+            <input type="radio" name="q9" value="Zone Troopers"> Zone Troopers<br>
+            <input type="radio" name="q9" value="Predator"> Predator<br>
+            <input type="radio" name="q9" value="RoboCop"> RoboCop<br>
+            <input type="radio" name="q9" value="Star Crystal"> Star Crystal<br>
+        </div>
+        <div class="question">
+            <h3>10. A female cyborg and a rogue trader team up to stop evil forces from capturing an alien spaceship.</h3>
+            <input type="radio" name="q10" value="Beyond the Rising Moon"> Beyond the Rising Moon<br>
+            <input type="radio" name="q10" value="Total Recall"> Total Recall<br>
+            <input type="radio" name="q10" value="The Terminator"> The Terminator<br>
+            <input type="radio" name="q10" value="Zone Troopers"> Zone Troopers<br>
+        </div>
+        <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+    </form>
+    <div class="result" id="result"></div>
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: "The Terminator",
+                q2: "Aliens",
+                q3: "Predator",
+                q4: "Total Recall",
+                q5: "RoboCop",
+                q6: "The Abyss",
+                q7: "Leviathan",
+                q8: "DeepStar Six",
+                q9: "Star Crystal",
+                q10: "Beyond the Rising Moon"
+            };
+            let score = 0;
+            for (let i = 1; i <= 10; i++) {
+                const question = document.querySelector(`input[name="q${i}"]:checked`);
+                if (question && question.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `You scored ${score} out of 10.<br><br>Correct Answers:<br>
+                1. The Terminator<br>
+                2. Aliens<br>
+                3. Predator<br>
+                4. Total Recall<br>
+                5. RoboCop<br>
+                6. The Abyss<br>
+                7. Leviathan<br>
+                8. DeepStar Six<br>
+                9. Star Crystal<br>
+                10. Beyond the Rising Moon`;
+        }
+    </script>
+</body>
+</html>
